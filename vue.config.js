@@ -9,6 +9,16 @@ module.exports = {
   },
   devServer: {
     disableHostCheck: true,
-    proxy: 'http://localhost:7001',
+    proxy: {
+
+      '^/auth': {
+        preserveHostHdr: true,
+        target: 'http://localhost:7001/',
+      },
+      '^/graphql-shopify': {
+        changeOrigin: true,
+        target: 'http://localhost:7001/',
+      },
+    },
   },
 };

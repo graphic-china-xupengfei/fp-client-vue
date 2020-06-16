@@ -1,5 +1,5 @@
 <template>
   <div class="about">
-    <h1>产品管理</h1>
+    <a-range-picker @change="onChange" />
   </div>
 </template>
